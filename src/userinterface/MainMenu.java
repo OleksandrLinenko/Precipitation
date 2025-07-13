@@ -4,6 +4,7 @@
  */
 package userinterface;
 
+import Precipitation.NewDataCommand;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -19,7 +20,7 @@ public class MainMenu {
         return new MainMenu();
     }
 
-    public static void show() {
+    public void show() {
         boolean endProgram = false;
         do {
             menu();
@@ -85,7 +86,7 @@ public class MainMenu {
     }
 
     public static void newData() {
-
+        NewDataCommand.create().handle();
     }
 
     public static void loadAnotherFile() {

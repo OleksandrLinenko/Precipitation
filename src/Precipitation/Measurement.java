@@ -18,9 +18,16 @@ public class Measurement {
     private LocalDate date;
     private List<Station> stations = new ArrayList();
 
-    public Measurement(String locationName, LocalDate date) {
+    public Measurement(String locationName, LocalDate date, List<Station> stations) {
         this.locationName = locationName;
         this.date = date;
+        this.stations = stations;
+    }
+    
+    public void reset() {
+        locationName = "";
+        date = null;
+        stations.clear();
     }
 
     public String getLocationName() {
@@ -38,4 +45,6 @@ public class Measurement {
     public void addStation(Station station) {
         stations.add(station);
     }
+    
+    
 }
