@@ -4,6 +4,7 @@
  */
 package userinterface;
 
+import Precipitation.LoadFileCommand;
 import Precipitation.NewDataCommand;
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -90,7 +91,7 @@ public class MainMenu {
     }
 
     public static void loadAnotherFile() {
-
+        LoadFileCommand.create().handle();
     }
 
     public static void listDaily() {
