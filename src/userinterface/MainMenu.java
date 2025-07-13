@@ -29,15 +29,15 @@ public class MainMenu {
     }
 
     public static void menu() {
-        System.out.println("Precipitation");
-        System.out.println("1. New data");
-        System.out.println("2. Load another file");
-        System.out.println("3. List of daily precipitation from rain gauge stations");
-        System.out.println("4. List of hourly precipitation for the basin");
-        System.out.println("5. Daily maximum");
-        System.out.println("6. Hourly maximum");
-        System.out.println("7. Correlation of precipitation and altitude");
-        System.out.println("0. End of program");
+        Message.create().show("Precipitation");
+        Message.create().show("1. New data");
+        Message.create().show("2. Load another file");
+        Message.create().show("3. List of daily precipitation from rain gauge stations");
+        Message.create().show("4. List of hourly precipitation for the basin");
+        Message.create().show("5. Daily maximum");
+        Message.create().show("6. Hourly maximum");
+        Message.create().show("7. Correlation of precipitation and altitude");
+        Message.create().show("0. End of program");
     }
 
     public static int getOption() {
@@ -78,38 +78,38 @@ public class MainMenu {
                 correlation();
                 break;
             default:
-                System.out.println("Undefined option");
+                Message.create().show("Undefined option");
         }
-        
+
         return false;
     }
-    
+
     public static void newData() {
-        
+
     }
-    
+
     public static void loadAnotherFile() {
-        
+
     }
-    
+
     public static void listDaily() {
-        
+
     }
-    
+
     public static void listHourly() {
-        
+
     }
-    
+
     public static void dailyMaximum() {
-        
+
     }
-    
+
     public static void hourlyMaximum() {
-        
+
     }
-    
+
     public static void correlation() {
-        
+
     }
 
 }

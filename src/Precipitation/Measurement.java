@@ -1,0 +1,41 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Precipitation;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author oleksandrlinenko
+ */
+public class Measurement {
+
+    private String locationName;
+    private LocalDate date;
+    private List<Station> stations = new ArrayList();
+
+    public Measurement(String locationName, LocalDate date) {
+        this.locationName = locationName;
+        this.date = date;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public List<Station> getStations() {
+        return stations;
+    }
+
+    public void addStation(Station station) {
+        stations.add(station);
+    }
+}
