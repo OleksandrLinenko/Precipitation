@@ -4,6 +4,9 @@
  */
 package Precipitation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author oleksandrlinenko
@@ -11,17 +14,21 @@ package Precipitation;
 public class Application {
 
     private static Application app = new Application();
-    private Measurement measurement;
+    private List<Measurement> measurements = new ArrayList();
 
     private Application() {
 
+    }
+
+    public void reset() {
+        measurements.clear();
     }
 
     public static Application getInstance() {
         return app;
     }
 
-    public Measurement getMeasurement() {
-        return measurement;
+    public List<Measurement> getMeasurements() {
+        return measurements;
     }
 }

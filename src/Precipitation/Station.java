@@ -17,9 +17,10 @@ public class Station {
     private float hight;
     List<Float> hourPrecip = new ArrayList();
 
-    public Station(String name, float hight) {
+    public Station(String name, float hight, List<Float> hourPrecip) {
         this.name = name;
         this.hight = hight;
+        this.hourPrecip = hourPrecip;
     }
 
     public String getName() {
