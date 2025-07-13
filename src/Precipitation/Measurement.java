@@ -45,6 +45,4 @@ public class Measurement {
     public void addStation(Station station) {
         stations.add(station);
     }
-    
-    
 }
