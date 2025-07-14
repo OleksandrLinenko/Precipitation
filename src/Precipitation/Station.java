@@ -38,4 +38,16 @@ public class Station {
     public void addPrectip(Float precip) {
         hourPrecip.add(precip);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%s %.2f ", name, hight));
+        for (Float value : hourPrecip) {
+            sb.append(String.format("%.2f ", value));
+        }
+
+        sb.append("\n");
+        return sb.toString();
+    }
 }
