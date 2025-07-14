@@ -42,8 +42,7 @@ public class Data {
                 String[] split = line.split(":");
                 name = split[1].trim();
             }
-            br.readLine();
-            br.readLine();
+            
             br.readLine();
 
             while ((line = br.readLine()) != null) {
