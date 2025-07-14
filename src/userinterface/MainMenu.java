@@ -4,9 +4,10 @@
  */
 package userinterface;
 
-import Precipitation.ListDailyPrecipCommand;
+import Precipitation.ShowHourPrecipCommand;
 import Precipitation.LoadFileCommand;
 import Precipitation.NewDataCommand;
+import Precipitation.ShowDayPrecipCommand;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -96,11 +97,11 @@ public class MainMenu {
     }
 
     public static void listDaily() {
-        ListDailyPrecipCommand.create().handle();
+        ShowDayPrecipCommand.create().handle();
     }
 
     public static void listHourly() {
-
+        ShowHourPrecipCommand.create().handle();
     }
 
     public static void dailyMaximum() {

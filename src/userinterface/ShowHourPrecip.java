@@ -4,7 +4,6 @@
  */
 package userinterface;
 
-import Precipitation.Application;
 import Precipitation.Measurement;
 import Precipitation.Station;
 import java.util.List;
@@ -13,19 +12,21 @@ import java.util.List;
  *
  * @author oleksandrlinenko
  */
-public class ShowStatistic {
+public class ShowHourPrecip {
 
-    public static ShowStatistic create() {
-        return new ShowStatistic();
+    public static ShowHourPrecip create() {
+        return new ShowHourPrecip();
     }
 
-    public void handle() {
-        List<Measurement> measurements = Application.getInstance().getMeasurements();
+    public void handle(List<Measurement> measurements) {
         for (Measurement msr : measurements) {
             Message.create().show(msr.toString());
             List<Station> stations = msr.getStations();
             for (Station stat : stations) {
-                Message.create().show(stat.toString());
+                List<Float> precips = stat.getHourPrecip();
+                for(Float precip : precips) {
+                    Message.create().show(String.format("%.2f ", precip));
+                }
             }
         }
     }
