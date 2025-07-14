@@ -42,18 +42,18 @@ public class Data {
                 String[] split = line.split(":");
                 name = split[1].trim();
             }
-            
+
             br.readLine();
 
             while ((line = br.readLine()) != null) {
-                List<Float> hoursPrecip = new ArrayList();
                 String[] split = line.split(" ");
                 String stationName = split[0].trim();
                 float height = Float.parseFloat(split[1].trim());
+                Station station = new Station(stationName, height);
                 for (int i = 2; i < split.length; i++) {
-                    hoursPrecip.add(Float.parseFloat(split[i].trim()));
+                    station.addPrecip(i - 2, Float.parseFloat(split[i].trim()));
                 }
-                stations.add(new Station(stationName, height, hoursPrecip));
+                stations.add(station);
             }
 
             Application.getInstance().getMeasurements().add(new Measurement(name, date, stations));
