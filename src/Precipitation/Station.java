@@ -5,6 +5,7 @@
 package Precipitation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,12 +16,11 @@ public class Station {
 
     private String name;
     private float height;
-    List<Float> hourPrecip = new ArrayList();
+    Float[] hourPrecip = new Float[24];
 
-    public Station(String name, float hight, List<Float> hourPrecip) {
+    public Station(String name, float hight) {
         this.name = name;
         this.height = hight;
-        this.hourPrecip = hourPrecip;
     }
 
     public String getName() {
@@ -32,19 +32,19 @@ public class Station {
     }
 
     public List<Float> getHourPrecip() {
-        return hourPrecip;
+        return Arrays.asList(hourPrecip);
     }
 
-    public void addPrectip(Float precip) {
-        hourPrecip.add(precip);
+    public void addPrecip(int i, float value) {
+        hourPrecip[i] = value;
     }
-    
+
     public float getDayPrecip() {
         float result = 0;
-        for(Float value : hourPrecip) {
+        for (Float value : hourPrecip) {
             result += value;
         }
-        
+
         return result;
     }
 
