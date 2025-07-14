@@ -4,6 +4,7 @@
  */
 package userinterface;
 
+import Precipitation.ListDailyPrecipCommand;
 import Precipitation.LoadFileCommand;
 import Precipitation.NewDataCommand;
 import java.util.Scanner;
@@ -95,7 +96,7 @@ public class MainMenu {
     }
 
     public static void listDaily() {
-
+        ListDailyPrecipCommand.create().handle();
     }
 
     public static void listHourly() {

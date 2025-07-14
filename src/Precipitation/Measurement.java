@@ -46,5 +46,13 @@ public class Measurement {
         stations.add(station);
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("Date: %d. %d. %d\n", date.getDayOfYear(), date.getMonthValue(), date.getYear()));
+        sb.append(String.format("Location: %s\n", locationName));
+        
+        return sb.toString();
+    }
     
 }
