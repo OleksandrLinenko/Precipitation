@@ -31,7 +31,7 @@ public class Data {
             String line;
             if ((line = br.readLine()) != null) {
                 String[] split = line.split(":");
-                String[] dateString = split[1].split(".");
+                String[] dateString = split[1].split("\\.");
                 int day = Integer.parseInt(dateString[0].trim());
                 int month = Integer.parseInt(dateString[1].trim());
                 int year = Integer.parseInt(dateString[2].trim());
