@@ -45,7 +45,7 @@ public class Measurement {
     public void addStation(Station station) {
         stations.add(station);
     }
-    
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -54,5 +54,4 @@ public class Measurement {
         
         return sb.toString();
     }
-    
 }
