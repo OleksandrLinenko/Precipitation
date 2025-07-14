@@ -4,18 +4,18 @@
  */
 package Precipitation;
 
-import userinterface.ShowStatistic;
+import userinterface.ShowHourPrecip;
 
 /**
  *
  * @author oleksandrlinenko
  */
-public class ListDailyPrecipCommand {
-    public static ListDailyPrecipCommand create() {
-        return new ListDailyPrecipCommand();
+public class ShowHourPrecipCommand {
+    public static ShowHourPrecipCommand create() {
+        return new ShowHourPrecipCommand();
     }
     
     public void handle() {
-        ShowStatistic.create().handle();
+        ShowHourPrecip.create().handle(Application.getInstance().getMeasurements());
     }
 }

@@ -14,12 +14,12 @@ import java.util.List;
 public class Station {
 
     private String name;
-    private float hight;
+    private float height;
     List<Float> hourPrecip = new ArrayList();
 
     public Station(String name, float hight, List<Float> hourPrecip) {
         this.name = name;
-        this.hight = hight;
+        this.height = hight;
         this.hourPrecip = hourPrecip;
     }
 
@@ -27,8 +27,8 @@ public class Station {
         return name;
     }
 
-    public float getHight() {
-        return hight;
+    public float getHeight() {
+        return height;
     }
 
     public List<Float> getHourPrecip() {
@@ -38,16 +38,21 @@ public class Station {
     public void addPrectip(Float precip) {
         hourPrecip.add(precip);
     }
+    
+    public float getDayPrecip() {
+        float result = 0;
+        for(Float value : hourPrecip) {
+            result += value;
+        }
+        
+        return result;
+    }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s %.2f ", name, hight));
-        for (Float value : hourPrecip) {
-            sb.append(String.format("%.2f ", value));
-        }
+        sb.append(String.format("%s %.2f ", name, height));
 
-        sb.append("\n");
         return sb.toString();
     }
 }
