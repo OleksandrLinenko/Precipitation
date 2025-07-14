@@ -9,10 +9,11 @@ package userinterface;
  * @author oleksandrlinenko
  */
 public class Message {
+
     public static Message create() {
         return new Message();
     }
-    
+
     public void show(String string) {
         System.out.print(string);
     }

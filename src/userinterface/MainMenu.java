@@ -28,24 +28,24 @@ public class MainMenu {
         do {
             menu();
             int option = getOption();
-            doOption(option);
+            endProgram = doOption(option);
         } while (!endProgram);
     }
 
     public static void menu() {
-        Message.create().show("Precipitation");
-        Message.create().show("1. New data");
-        Message.create().show("2. Load another file");
-        Message.create().show("3. List of daily precipitation from rain gauge stations");
-        Message.create().show("4. List of hourly precipitation for the basin");
-        Message.create().show("5. Daily maximum");
-        Message.create().show("6. Hourly maximum");
-        Message.create().show("7. Correlation of precipitation and altitude");
-        Message.create().show("0. End of program");
+        Message.create().show("\nPrecipitation\n");
+        Message.create().show("1. New data\n");
+        Message.create().show("2. Load another file\n");
+        Message.create().show("3. List of daily precipitation from rain gauge stations\n");
+        Message.create().show("4. List of hourly precipitation for the basin\n");
+        Message.create().show("5. Daily maximum\n");
+        Message.create().show("6. Hourly maximum\n");
+        Message.create().show("7. Correlation of precipitation and altitude\n");
+        Message.create().show("0. End of program\n");
     }
 
     public static int getOption() {
-        System.out.print("Pick the option: ");
+        Message.create().show("Pick the option: ");
         int option;
         try {
             option = sc.nextInt();
