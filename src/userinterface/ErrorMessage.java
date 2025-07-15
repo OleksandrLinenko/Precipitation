@@ -8,15 +8,13 @@ package userinterface;
  *
  * @author oleksandrlinenko
  */
-public class Message implements MessageInterface {
-
-    public static Message create() {
-        return new Message();
-    }
-
-    @Override
-    public void show(String string) {
-        System.out.print(string);
+public class ErrorMessage implements MessageInterface {
+    public static ErrorMessage create() {
+        return new ErrorMessage();
     }
     
+    @Override
+    public void show(String string) {
+        System.err.println(string);
+    }
 }
