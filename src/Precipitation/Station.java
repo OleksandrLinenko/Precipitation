@@ -18,12 +18,12 @@ public class Station {
     private float height;
     Float[] hourPrecip = new Float[24];
 
-    public Station(String name, float hight) {
+    public Station(String name, float height) {
         if (name.isEmpty() || height <= 0) {
             throw new IllegalArgumentException("Empty stations parameters");
         }
         this.name = name;
-        this.height = hight;
+        this.height = height;
     }
 
     public String getName() {

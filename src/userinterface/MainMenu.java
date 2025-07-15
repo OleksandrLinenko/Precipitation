@@ -18,13 +18,13 @@ import java.util.InputMismatchException;
  * @author oleksandrlinenko
  */
 public class MainMenu {
-
+    
     private static Scanner sc = new Scanner(System.in);
-
+    
     public static MainMenu create() {
         return new MainMenu();
     }
-
+    
     public void show() {
         boolean endProgram = false;
         do {
@@ -33,7 +33,7 @@ public class MainMenu {
             endProgram = doOption(option);
         } while (!endProgram);
     }
-
+    
     public static void menu() {
         Message.create().show("\nPrecipitation\n");
         Message.create().show("1. New data\n");
@@ -45,7 +45,7 @@ public class MainMenu {
         Message.create().show("7. Correlation of precipitation and altitude\n");
         Message.create().show("0. End of program\n");
     }
-
+    
     public static int getOption() {
         Message.create().show("Pick the option: ");
         int option;
@@ -54,10 +54,10 @@ public class MainMenu {
         } catch (InputMismatchException ex) {
             return - 1;
         }
-
+        
         return option;
     }
-
+    
     public static boolean doOption(int option) {
         switch (option) {
             case 0:
@@ -86,36 +86,44 @@ public class MainMenu {
             default:
                 Message.create().show("Undefined option");
         }
-
+        
         return false;
     }
-
+    
     public static void newData() {
         NewDataCommand.create().handle();
     }
-
+    
     public static void loadAnotherFile() {
         LoadFileCommand.create().handle();
     }
-
+    
     public static void listDaily() {
         ShowDayPrecipCommand.create().handle();
     }
-
+    
     public static void listHourly() {
         ShowHourPrecipCommand.create().handle();
     }
-
+    
     public static void dailyMaximum() {
-        ShowMaxDayPrecipCommand.create().handle();
+        try {
+            ShowMaxDayPrecipCommand.create().handle();
+        } catch (Exception ex) {
+            ErrorMessage.create().show(ex.getMessage());
+        }
     }
-
+    
     public static void hourlyMaximum() {
-        ShowMaxHourPrecipCommand.create().handle();
+        try {
+            ShowMaxHourPrecipCommand.create().handle();
+        } catch (Exception ex) {
+            ErrorMessage.create().show(ex.getMessage());
+        }
     }
-
+    
     public static void correlation() {
-
+        
     }
-
+    
 }
