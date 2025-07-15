@@ -35,6 +35,6 @@ public class MaxDayPrecip {
             }
         }
 
-        return String.format("%s %d %s %.2f %.2f", stationName, date.getDayOfMonth(), location, height, max);
+        return String.format("%s %d %s %.1f %.2f\n", stationName, date.getDayOfMonth(), location, height, max);
     }
 }

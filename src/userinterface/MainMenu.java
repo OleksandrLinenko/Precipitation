@@ -9,6 +9,7 @@ import Precipitation.LoadFileCommand;
 import Precipitation.NewDataCommand;
 import Precipitation.ShowDayPrecipCommand;
 import Precipitation.ShowMaxDayPrecipCommand;
+import Precipitation.ShowMaxHourPrecipCommand;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -110,7 +111,7 @@ public class MainMenu {
     }
 
     public static void hourlyMaximum() {
-
+        ShowMaxHourPrecipCommand.create().handle();
     }
 
     public static void correlation() {
