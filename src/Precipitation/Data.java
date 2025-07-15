@@ -23,7 +23,6 @@ public class Data {
     }
 
     public void readFile(String path) {
-
         try (BufferedReader br = new BufferedReader(new FileReader(new File(path)))) {
             LocalDate date = null;
             String name = "";

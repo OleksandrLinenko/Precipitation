@@ -12,23 +12,27 @@ import java.util.List;
  * @author oleksandrlinenko
  */
 public class MaxHourPrecip {
+
     public static MaxHourPrecip create() {
         return new MaxHourPrecip();
     }
-    
-    public String handle(List<Measurement> measurements) {
-       float max = -Float.MAX_VALUE;
+
+    public String handle(List<Measurement> measurements) throws Exception {
+        if (measurements.isEmpty()) {
+            throw new Exception("Measurement list is empty");
+        }
+        float max = -Float.MAX_VALUE;
         String location = "";
         LocalDate date = null;
         String stationName = "";
         float height = 0;
         int hour = 0;
-        for(Measurement meas : measurements) {
+        for (Measurement meas : measurements) {
             List<Station> stations = meas.getStations();
-            for(Station stat : stations) {
+            for (Station stat : stations) {
                 Float[] hours = stat.getHourPrecipArr();
-                for(int i = 0; i < hours.length; i++) {
-                    if(hours[i] >= max) {
+                for (int i = 0; i < hours.length; i++) {
+                    if (hours[i] >= max) {
                         max = hours[i];
                         hour = i + 1;
                         stationName = stat.getName();
@@ -38,9 +42,9 @@ public class MaxHourPrecip {
                     }
                 }
             }
-            
+
         }
 
-       return String.format("%s %d %d %.1f %s %.2f\n", stationName, date.getDayOfMonth(), hour, max, location, height);
-    }   
+        return String.format("%s %d %d %.1f %s %.2f\n", stationName, date.getDayOfMonth(), hour, max, location, height);
+    }
 }

@@ -19,11 +19,14 @@ public class Measurement {
     private List<Station> stations = new ArrayList();
 
     public Measurement(String locationName, LocalDate date, List<Station> stations) {
+        if (locationName.isEmpty() || date == null) {
+            throw new IllegalArgumentException("Invalid measurement parameters");
+        }
         this.locationName = locationName;
         this.date = date;
         this.stations = stations;
     }
-    
+
     public void reset() {
         locationName = "";
         date = null;
@@ -51,7 +54,7 @@ public class Measurement {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("Date: %d. %d. %d\n", date.getDayOfYear(), date.getMonthValue(), date.getYear()));
         sb.append(String.format("Location: %s\n", locationName));
-        
+
         return sb.toString();
     }
 }

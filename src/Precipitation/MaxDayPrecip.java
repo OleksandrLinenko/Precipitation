@@ -12,20 +12,24 @@ import java.util.List;
  * @author oleksandrlinenko
  */
 public class MaxDayPrecip {
+
     public static MaxDayPrecip create() {
         return new MaxDayPrecip();
     }
-    
-    public String handle(List<Measurement> measurements) {
+
+    public String handle(List<Measurement> measurements) throws Exception {
+        if (measurements.isEmpty()) {
+            throw new Exception("Measurement list is empty");
+        }
         float max = -Float.MAX_VALUE;
         String location = "";
         LocalDate date = null;
         String stationName = "";
         float height = 0;
-        for(Measurement meas : measurements) {
+        for (Measurement meas : measurements) {
             List<Station> stations = meas.getStations();
-            for(Station stat : stations) {
-                if(stat.getDayPrecip() >= max) {
+            for (Station stat : stations) {
+                if (stat.getDayPrecip() >= max) {
                     stationName = stat.getName();
                     height = stat.getHeight();
                     max = stat.getDayPrecip();
