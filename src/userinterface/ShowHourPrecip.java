@@ -25,7 +25,7 @@ public class ShowHourPrecip {
             for (Station stat : stations) {
                 List<Float> precips = stat.getHourPrecip();
                 for(Float precip : precips) {
-                    Message.create().show(String.format("%.2f ", precip));
+                    Message.create().show(String.format("%.2f\n", precip));
                 }
             }
         }

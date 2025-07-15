@@ -17,6 +17,7 @@ public class NewDataCommand {
     
     public void handle() {
         Application.getInstance().reset();
-        Message.create().show("Data had been reset");
+        Message.create().show("Data had been reset\n");
+        Message.create().show("");
     }
 }
