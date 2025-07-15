@@ -15,7 +15,7 @@ public class ShowMaxDayPrecipCommand {
         return new ShowMaxDayPrecipCommand();
     }
     
-    public void handle() {
+    public void handle() throws Exception {
         Message.create().show(MaxDayPrecip.create().handle(Application.getInstance().getMeasurements()));
     }
 }

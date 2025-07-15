@@ -19,6 +19,9 @@ public class Station {
     Float[] hourPrecip = new Float[24];
 
     public Station(String name, float hight) {
+        if (name.isEmpty() || height <= 0) {
+            throw new IllegalArgumentException("Empty stations parameters");
+        }
         this.name = name;
         this.height = hight;
     }
@@ -30,7 +33,7 @@ public class Station {
     public float getHeight() {
         return height;
     }
-    
+
     public Float[] getHourPrecipArr() {
         return hourPrecip;
     }
@@ -39,8 +42,14 @@ public class Station {
         return Arrays.asList(hourPrecip);
     }
 
-    public void addPrecip(int i, float value) {
-        hourPrecip[i] = value;
+    public void addPrecip(int hour, float value) {
+        if (hour < 0 || hour > 24) {
+            throw new IllegalArgumentException("Invalid hour");
+        }
+        if (value < 0) {
+            throw new IllegalArgumentException("Negative percip");
+        }
+        hourPrecip[hour] = value;
     }
 
     public float getDayPrecip() {
