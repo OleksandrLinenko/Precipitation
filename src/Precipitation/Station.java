@@ -30,6 +30,10 @@ public class Station {
     public float getHeight() {
         return height;
     }
+    
+    public Float[] getHourPrecipArr() {
+        return hourPrecip;
+    }
 
     public List<Float> getHourPrecip() {
         return Arrays.asList(hourPrecip);
