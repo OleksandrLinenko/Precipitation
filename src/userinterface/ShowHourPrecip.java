@@ -23,9 +23,9 @@ public class ShowHourPrecip {
             Message.create().show(msr.toString());
             List<Station> stations = msr.getStations();
             for (Station stat : stations) {
-                List<Float> precips = stat.getHourPrecip();
-                for(Float precip : precips) {
-                    Message.create().show(String.format("%.2f\n", precip));
+                Float[] precips = stat.getHourPrecipArr();
+                for(int i = 0; i < precips.length; i++) {
+                    Message.create().show(String.format("%d %.1f\n", i + 1, precips[i]));
                 }
             }
         }
